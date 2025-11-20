@@ -109,7 +109,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&sk>;
         };
         lmd: layer_modifier {
@@ -119,41 +119,40 @@
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
-
-        shifted: macro_shifted_kp {
-            #binding-cells = <1>;
-            label = "MACRO_SHIFTED_KP";
-            compatible = "zmk,behavior-macro-one-param";
-            bindings =
-                <&macro_press &kp LSHFT>,
-                <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_release &kp LSHFT>;
-        };
-
-        as_ht: autoshift_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "AUTOSHIFT_HOLD_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&shifted>, <&kp>;
-        };
-
-        as: autoshift {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            label = "AUTOSHIFT_KP";
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1>,
-                <&macro_param_1to2>,
-                <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1>,
-                <&macro_param_1to2>,
-                <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
-        };
+        /* shifted: macro_shifted_kp { */
+        /*     #binding-cells = <1>; */
+        /*     label = "MACRO_SHIFTED_KP"; */
+        /*     compatible = "zmk,behavior-macro-one-param"; */
+        /*     bindings = */
+        /*         <&macro_press &kp LSHFT>, */
+        /*         <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>, */
+        /*         <&macro_release &kp LSHFT>; */
+        /* }; */
+        /**/
+        /* as_ht: autoshift_hold_tap { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     label = "AUTOSHIFT_HOLD_TAP"; */
+        /*     #binding-cells = <2>; */
+        /*     tapping-term-ms = <150>; */
+        /*     flavor = "tap-preferred"; */
+        /*     bindings = <&shifted>, <&kp>; */
+        /* }; */
+        /**/
+        /* as: autoshift { */
+        /*     compatible = "zmk,behavior-macro-one-param"; */
+        /*     #binding-cells = <1>; */
+        /*     label = "AUTOSHIFT_KP"; */
+        /*     bindings = */
+        /*         <&macro_press>, */
+        /*         <&macro_param_1to1>, */
+        /*         <&macro_param_1to2>, */
+        /*         <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>, */
+        /*         <&macro_pause_for_release>, */
+        /*         <&macro_release>, */
+        /*         <&macro_param_1to1>, */
+        /*         <&macro_param_1to2>, */
+        /*         <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>; */
+        /* }; */
     };
 
 	keymap {
@@ -161,10 +160,10 @@
 		base {
 			bindings = <
 				&bootloader
-				&none     &none  &none  &none  &none    &none           &none             &none  &none  &none          &none         &none       &none      &none
-				&none     &as Q  &as W  &as F           &as P           &as G  &none      &none  &as J  &as L          &as U         &as Y       &as APOS   &none
-				&kp LGUI  &as A  &as R  &as S           &as T           &as D                    &as H  &as N          &as E         &as I       &as O      &kp RGUI
-				&sht LSHFT LSHFT &as Z  &as X  &as C           &as V           &as B  &none      &none  &as K  &as M          &as COMMA     &as PERIOD  &as SLASH  &none
+				&none     &kp N1 &kp N2 &kp N3          &kp N4          &kp N5 &none      &none  &kp N6 &kp N7         &kp N8        &kp N9      &kp N0     &none
+				&none     &kp Q  &kp W  &kp E           &kp R           &kp T  &none      &none  &kp Y  &kp U          &kp I         &kp O       &kp P      &none
+				&kp LGUI  &kp A  &kp S  &kp D           &kp F           &kp G                    &kp H  &kp J          &kp K         &kp L       &kp APOS   &kp RGUI
+				&sht LSHFT LSHFT  &kp Z  &kp X  &kp C           &kp V           &kp B  &none      &none  &kp N  &kp M          &kp COMMA     &kp PERIOD  &kp SLASH  &none
 				&none     &none  &none  &lmd MEDIA TAB  &lmd MOUSE ESC                                  &lmd SYM BSPC  &lmd FUN DEL  &none       &none      &none
 				
                                                                   &sht LALT LALT &sht LCTRL LCTRL              &sht RCTRL RCTRL  &sht RALT RALT
@@ -237,13 +236,13 @@
 			bindings = <
                 &bootloader
                 &trans  &trans     &trans    &trans     &trans     &trans    &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
-                &as LBRC  &as LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &as RBKT  &as RBRC       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
+                &kp LBRC  &kp LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &kp RBKT  &KP RBRC       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
                 &trans  &kp LPAR   &kp DLLR  &kp PRCNT  &kp CARET  &kp RPAR                       &kp RC(B)  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI &trans 
-                &trans  &as GRAVE  &kp EXCL  &kp AT     &kp HASH   &as BSLH  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
-                &trans  &trans     &trans    &trans     &as SEMI                                         &trans     &trans     &trans    &trans   &trans
+                &trans  &kp GRAVE  &kp EXCL  &kp AT     &kp HASH   &kp BSLH  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
+                &trans  &trans     &trans    &trans     &kp SEMI                                         &trans     &trans     &trans    &trans   &trans
 
                                                           &trans    &trans       &trans  &trans
-                                                &as MINUS &trans  &trans       &trans  &trans  &trans
+                                                &kp MINUS &trans  &trans       &trans  &trans  &trans
                                                                     &trans    &trans
 			>;
 		};
