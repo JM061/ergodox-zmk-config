@@ -236,7 +236,7 @@
 			bindings = <
                 &bootloader
                 &trans  &trans     &trans    &trans     &trans     &trans    &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
-                &kp LBRC  &kp LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &kp RBKT  &KP RBRC       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
+                &trans  &kp LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &kp RBKT  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
                 &trans  &kp LPAR   &kp DLLR  &kp PRCNT  &kp CARET  &kp RPAR                       &kp RC(B)  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI &trans 
                 &trans  &kp GRAVE  &kp EXCL  &kp AT     &kp HASH   &kp BSLH  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
                 &trans  &trans     &trans    &trans     &kp SEMI                                         &trans     &trans     &trans    &trans   &trans
