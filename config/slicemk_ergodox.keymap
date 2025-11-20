@@ -164,7 +164,7 @@
 				&none     &none  &none  &none  &none    &none           &none             &none  &none  &none          &none         &none       &none      &none
 				&none     &as Q  &as W  &as F           &as P           &as G  &none      &none  &as J  &as L          &as U         &as Y       &as APOS   &none
 				&kp LGUI  &as A  &as R  &as S           &as T           &as D                    &as H  &as N          &as E         &as I       &as O      &kp RGUI
-				&sht LSHFT  &as Z  &as X  &as C           &as V           &as B  &none      &none  &as K  &as M          &as COMMA     &as PERIOD  &as SLASH  &none
+				&sht LSHFT LSHFT &as Z  &as X  &as C           &as V           &as B  &none      &none  &as K  &as M          &as COMMA     &as PERIOD  &as SLASH  &none
 				&none     &none  &none  &lmd MEDIA TAB  &lmd MOUSE ESC                                  &lmd SYM BSPC  &lmd FUN DEL  &none       &none      &none
 				
                                                                   &sht LALT LALT &sht LCTRL LCTRL              &sht RCTRL RCTRL  &sht RALT RALT
@@ -237,7 +237,7 @@
 			bindings = <
                 &bootloader
                 &trans  &trans     &trans    &trans     &trans     &trans    &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
-                &trans  &as LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &as RBKT  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
+                &as LBRC  &as LBKT   &kp AMPS  &kp STAR   &kp EQUAL  &as RBKT  &as RBRC       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
                 &trans  &kp LPAR   &kp DLLR  &kp PRCNT  &kp CARET  &kp RPAR                       &kp RC(B)  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI &trans 
                 &trans  &as GRAVE  &kp EXCL  &kp AT     &kp HASH   &as BSLH  &trans       &trans  &trans  &trans     &trans     &trans    &trans   &trans 
                 &trans  &trans     &trans    &trans     &as SEMI                                         &trans     &trans     &trans    &trans   &trans
